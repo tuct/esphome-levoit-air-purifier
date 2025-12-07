@@ -72,7 +72,7 @@ void LevoitFan::control(const fan::FanCall &call) {
     switch (targetSpeed) {
       case 0:
         // send power off
-        offMask |= static_cast<uint32_t>(LevoitState::POWER);
+        offMask |= static_cast<uint32_t>(LevoitState::POWER) | static_cast<uint32_t>(LevoitState::FAN_MANUAL);
         break;
       case 1:
         onMask |= static_cast<uint32_t>(LevoitState::FAN_SPEED1) | static_cast<uint32_t>(LevoitState::FAN_MANUAL);
